@@ -1,8 +1,5 @@
 # Weekly-Meal-Planner
 
-![Header](https://media-exp1.licdn.com/dms/image/C5603AQHYymq1Sg8MXg/profile-displayphoto-shrink_200_200/0/1593224120300?e=1635379200&v=beta&t=UIF0EqfQ_C5WLv8PhXJdTJ-B156KeDgrheUl-88BQxw/keyy123/keyy123)
-
-
 - [Overview](#overview)
 - [MVP](#mvp)
   - [Goals](#goals)
@@ -33,37 +30,59 @@ The _**Weekly Meal Planner** is a simple application that will allow user to sto
 The _**Weekly Meal Planner**  MVP requirements are the following: 
 
 ### Backend(Server)
-- _Build a **Ruby on Rails** API with RESTful JSON endpoints_
-- _Build a database with minimum of 3 tables and 1 association between tables_
-- _Use **only** Rails to build models_
-- _Build Full CRUD for minimum of one controller of the non-user tables(```index```, ```show```, ```create```, ```update```, ```destroy```)_
+- Build a **Ruby on Rails** API with RESTful JSON endpoints
+- Build a database with minimum of 3 tables and 1 association between tables
+- Use **only** Rails to build models
+- Build Full CRUD for minimum of one controller of the non-user tables _(```index```, ```show```, ```create```, ```update```, ```destroy```)_
 
 ### Frontend(client)
-- _Build a react app via ```npx-create-react-app```_
---
+- Build a react app via ```npx-create-react-app```
+-Build 8 separate components in an organized file structure
+-Use _only_ React for DOM manipulation
+-Access data from your **Rails API** and render data in react components
+-Use **React-Router** for client-side routing
+-Build full CRUD actions for minimum 1 non-auth based service _(```index```, ```show```, ```create```, ```update```, ```destroy```)_
+
+### Styling
+- Style using CSS, SASS, SCSS, Styled Components, or Material_UI
+- Use Flexbox or Grid
+- Use 2 media queries to design for 3 different screen sizes (1 must be desktop)
+
+### Deployment
+- Deploy the fully functional front-end via Surge or Netlify.
+- Deploy the back-end via Heroku.
+- Deploy early and often(this will help to debug small issues before they become large issues)
+
+### Linting
+- Indent properly.
+- Utilize high-quality, semantic variable names.
+- Follow ```camelCase```, ```snake_case```, and ```kebab-case``` convention.
+- Remove unnecessary boilerplate React files and code.
+- Remove all ```console.log()``` s and commented out code (functional notes and comments are okay).
+
+
+### Procedural
+- Initialize a **git repo on Github**, with a link to your hosted project.
+- Have **frequent commits**, making a robust commit history at least every day. (**75 commits minimum**)
+- Use effective and **safe branching and merging** processes.
+
 <br>
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- _Enable user auth,_
+- _Enable full CRUD on weekly meal plans_
+- _Enable full CRUD on recipes_
 
 <br>
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
-
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | _The only way to react is react_ |
+|   React Router   | _Client-side routing_ |
+|    Material-UI   |_Library of re-usable and customizable components_ |
 
 <br>
 
@@ -73,7 +92,7 @@ The _**Weekly Meal Planner**  MVP requirements are the following:
 
 > Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
-![Dummy Link](url)
+![Wireframes Paths](https://lucid.app/lucidchart/28ab52a1-6f2a-42ec-92c3-7b2e5b619c8f/edit?beaconFlowId=CBB9EEF13FDA72FD&page=0_0#)
 
 - Desktop Landing
 
