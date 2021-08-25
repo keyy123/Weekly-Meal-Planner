@@ -1,6 +1,6 @@
 # Weekly-Meal-Planner
 
-[![Header](https://raw.githubusercontent.com/Kheyyon/Parker/readme_header.png "Header")](https://some-url.dev/)
+[![Header](https://raw.githubusercontent.com/Kheyyon/Parker/readme_header.png "Header")](https://https://media-exp1.licdn.com/dms/image/C5603AQHYymq1Sg8MXg/profile-displayphoto-shrink_200_200/0/1593224120300?e=1635379200&v=beta&t=UIF0EqfQ_C5WLv8PhXJdTJ-B156KeDgrheUl-88BQxw)
 
 
 - [Overview](#overview)
