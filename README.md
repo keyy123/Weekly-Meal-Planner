@@ -1,6 +1,6 @@
 # Weekly-Meal-Planner
 
-[![Header](https://media-exp1.licdn.com/dms/image/C5603AQHYymq1Sg8MXg/profile-displayphoto-shrink_200_200/0/1593224120300?e=1635379200&v=beta&t=UIF0EqfQ_C5WLv8PhXJdTJ-B156KeDgrheUl-88BQxw/keyy123/keyy123/readme_header.png "Header")](https://www.linkedin.com/in/kheyyon-parker/)
+[![Header](https://media-exp1.licdn.com/dms/image/C5603AQHYymq1Sg8MXg/profile-displayphoto-shrink_200_200/0/1593224120300?e=1635379200&v=beta&t=UIF0EqfQ_C5WLv8PhXJdTJ-B156KeDgrheUl-88BQxw/keyy123/keyy123 "Header")](https://www.linkedin.com/in/kheyyon-parker/)
 
 
 - [Overview](#overview)
