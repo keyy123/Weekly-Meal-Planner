@@ -19,9 +19,7 @@
 
 ## Overview
 
-_**Project Title** 
-Weekly Meal Planner
-
+The _**Weekly Meal Planner** is a simple application that will allow user to store recipes into a weekly meal plan that will hold the total calories and macronutrients (i.e., Protein) of the user's own collection of recipes which must be added manually. I would advise the user to have an account or access to sites with recipes such as 'FitMenCook' to utilize the app effectively. It is a react on rails project which utilizes postgresQL as the database client. It is an complementary project to the Maintenance calculator. 
 
 <br>
 
@@ -29,7 +27,7 @@ Weekly Meal Planner
 
 > The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
 
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+_The **Weekly Meal Planner** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
 
 <br>
 
