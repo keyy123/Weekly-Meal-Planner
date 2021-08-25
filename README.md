@@ -36,7 +36,8 @@ The _**Weekly Meal Planner**  MVP requirements are the following:
 - _Build Full CRUD for minimum of one controller of the non-user tables(```index```, ```show```, ```create```, ```update```, ```destroy```)_
 
 ### Frontend(client)
-- _Build a react app via _
+- _Build a react app via ```npx-create-react-app``` _
+--
 <br>
 
 ### Goals
