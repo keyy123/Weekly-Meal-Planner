@@ -27,8 +27,16 @@ The _**Weekly Meal Planner** is a simple application that will allow user to sto
 
 > The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
 
-The _**Weekly Meal Planner** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+The _**Weekly Meal Planner**  MVP requirements are the following: 
 
+### Backend(Server)
+- _Build a **Ruby on Rails** API with RESTful JSON endpoints_
+- _Build a database with minimum of 3 tables and 1 association between tables_
+- _Use **only** Rails to build models_
+-_Build Full CRUD for minimum of one controller of the non-user tables_
+
+### Frontend(client)
+- _Build a react app via _
 <br>
 
 ### Goals
