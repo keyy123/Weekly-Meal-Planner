@@ -92,7 +92,8 @@ The _**Weekly Meal Planner**  MVP requirements are the following:
 
 > Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
-![Wireframes Paths](https://lucid.app/lucidchart/28ab52a1-6f2a-42ec-92c3-7b2e5b619c8f/edit?beaconFlowId=CBB9EEF13FDA72FD&page=0_0#)
+![Wireframe Paths](https://user-images.githubusercontent.com/30008919/130834011-82b60294-99c2-4afc-ad6b-9a8eec5c7fad.JPG)
+
 
 - Desktop Landing
 
