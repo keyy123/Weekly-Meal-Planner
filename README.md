@@ -101,25 +101,26 @@ The _**Weekly Meal Planner**  MVP requirements are the following:
 
 - Desktop Landing
 
-![Dummy Link](url)
+![Landing Page - Desktop](https://user-images.githubusercontent.com/30008919/130842522-cfd84090-f2fd-4272-a777-1edf829ef181.JPG)
 
-- Desktop Hero
 
-![Dummy Link](url)
+-Tablet Landing
+![Landing Page - Tablet](https://user-images.githubusercontent.com/30008919/130842629-3aa47a3c-155b-4b8f-9d00-0bbab372057d.JPG)
+
+-Mobile Landing
+![Mobile - Landing Page](https://user-images.githubusercontent.com/30008919/130842925-a8c08d86-b0e5-485d-b3cc-241cbd3a8ce5.JPG)
 
 - Resource Index
 
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
 - Tablet Resource Index
- 
-![Dummy Link](url)
 
-- Mobile Resource Index
+- ![Tablet - index   show](https://user-images.githubusercontent.com/30008919/130847825-b67621b8-c889-4ab3-89bf-6ec5ef0cdfa1.JPG)
+
+
+- Mobile Resource Index + Show 
+
+![Index + Show - Mobile](https://user-images.githubusercontent.com/30008919/130847624-79cfd09b-152e-411a-8527-89e64c987351.JPG)
+
 
 #### Component Tree
 
