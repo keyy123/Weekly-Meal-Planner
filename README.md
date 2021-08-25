@@ -33,7 +33,7 @@ The _**Weekly Meal Planner**  MVP requirements are the following:
 - _Build a **Ruby on Rails** API with RESTful JSON endpoints_
 - _Build a database with minimum of 3 tables and 1 association between tables_
 - _Use **only** Rails to build models_
-- _Build Full CRUD for minimum of one controller of the non-user tables(```index```, ```show```, ```create```, ```update```, ```destroy ```)_
+- _Build Full CRUD for minimum of one controller of the non-user tables(```index```, ```show```, ```create```, ```update```, ```destroy```)_
 
 ### Frontend(client)
 - _Build a react app via _
