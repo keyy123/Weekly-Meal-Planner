@@ -92,7 +92,7 @@ The _**Weekly Meal Planner**  MVP requirements are the following:
 ![Dummy Link](url)
 
 - Tablet Resource Index
-
+ 
 ![Dummy Link](url)
 
 - Mobile Resource Index
