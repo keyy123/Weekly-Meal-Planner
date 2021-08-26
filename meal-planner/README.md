@@ -23,7 +23,7 @@ https://www.linkedin.com/in/kheyyon-parker/
 
 ## Overview
 
-The _**Weekly Meal Planner** is a simple application that will allow user to store recipes into a weekly meal plan that will hold the total calories and macronutrients (i.e., Protein) of the user's own collection of recipes which must be added manually. I would advise the user to have an account or access to sites with recipes such as 'FitMenCook' to utilize the app effectively. It is a react on rails project which utilizes postgresQL as the database client. It is an complementary project to the Maintenance calculator._
+The _**Weekly Meal Planner** is a simple application that will allow users to store recipes into a weekly meal plan that will hold the total calories and macronutrients (i.e., Protein) of the user's own collection of recipes which must be added manually. I would advise the user to have an account or access to sites with recipes such as 'FitMenCook' to utilize the app effectively. It is a react on rails project which utilizes postgresQL as the database client. It is an complementary project to the Maintenance calculator._
 
 <br>
 
