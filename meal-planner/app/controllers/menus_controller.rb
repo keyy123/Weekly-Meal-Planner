@@ -16,7 +16,7 @@ class MenusController < ApplicationController
   # POST /menus
   def create
     @menu = Menu.new(menu_params)
-
+    @menu.user = @current_user
     if @menu.save
       render json: @menu, status: :created
     else
