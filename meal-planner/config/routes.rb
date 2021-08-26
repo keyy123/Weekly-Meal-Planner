@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :menus
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'
   post 'users', to: 'users#create'
