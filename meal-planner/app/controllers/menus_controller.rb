@@ -5,8 +5,6 @@ class MenusController < ApplicationController
   def index
   
   @menu = Menu.all.where(user_id: @current_user)
-
-
     render json: @menu
   end
 
@@ -51,3 +49,5 @@ class MenusController < ApplicationController
       params.require(:menu).permit(:name, :kcal, :start_date, :end_date)
     end
 end
+
+#yes
