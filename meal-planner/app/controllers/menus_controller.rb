@@ -5,7 +5,7 @@ class MenusController < ApplicationController
   def index
   
   @menu = Menu.all.where(user_id: @current_user)
-    render json: @menu
+    render json: @menu, include: :recipes
   end
 
   # GET /menus/1
