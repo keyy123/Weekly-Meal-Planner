@@ -3,9 +3,11 @@ class MenusController < ApplicationController
   before_action :authorize_request
   # GET /menus
   def index
-    @menus = Menu.all
+  
+  @menu = Menu.all.where(user_id: @current_user)
 
-    render json: @menus
+
+    render json: @menu
   end
 
   # GET /menus/1
