@@ -44,6 +44,9 @@ handleVerify()
           <Route path="/login">
             <Login handleLogin={handleLogin} />
           </Route>
+          <Route path='/register'>
+            <Register handleRegister={handleRegister}/>
+          </Route>
         </Switch>
       </Layout>
     </div>

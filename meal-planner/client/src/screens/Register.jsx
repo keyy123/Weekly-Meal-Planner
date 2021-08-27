@@ -1,33 +1,45 @@
 import {useState} from 'react'
-import { Link } from 'react-router-dom'
 
-export default function Login(props) {
-  const [formData, setFormData] = useState({
+export default function Register(props) {
+  const [registerData, setRegisterData] = useState({
     username: '',
-    password: '',
- })
- const {handleLogin} = props
+    email: '',
+    password: ''
+  });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((...prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  const { handleRegister } = props
   
+  const handdleChange = (e) => {
+    const { name, value } = e.target
+    setRegisterData((...prevState) => ({
+      ...prevState,
+      [name]:value,
+    }))
+  }
+
+
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
-      handleLogin(formData)
+      handleRegister(formData);
     }}>
-        <h3>Login</h3>
+      <h3>Register</h3>
       <label>
         Username:
         <input
           type='text'
           name='username'
           value={formData.username}
+          onChange={handleChange}
+        />
+      </label>
+      <br />
+      <label>
+        Email:
+        <input
+          type='text'
+          name='email'
+          value={formData.email}
           onChange={handleChange}
         />
       </label>
@@ -42,10 +54,7 @@ export default function Login(props) {
         />
       </label>
       <br />
-      <Link to='/register'>Register</Link>
       <button>Submit</button>
     </form>
-      
-  
   )
 }
