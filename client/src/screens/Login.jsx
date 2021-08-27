@@ -10,7 +10,7 @@ export default function Login(props) {
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setFormData((...prevState) => ({
+    setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
