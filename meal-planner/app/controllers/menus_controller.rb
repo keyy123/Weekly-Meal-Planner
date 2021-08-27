@@ -3,9 +3,9 @@ class MenusController < ApplicationController
   before_action :authorize_request
   # GET /menus
   def index
-    @menus = Menu.all
-
-    render json: @menus
+  
+  @menu = Menu.all.where(user_id: @current_user)
+    render json: @menu, include: :recipes
   end
 
   # GET /menus/1
@@ -16,7 +16,7 @@ class MenusController < ApplicationController
   # POST /menus
   def create
     @menu = Menu.new(menu_params)
-
+    @menu.user = @current_user
     if @menu.save
       render json: @menu, status: :created
     else
@@ -49,3 +49,5 @@ class MenusController < ApplicationController
       params.require(:menu).permit(:name, :kcal, :start_date, :end_date)
     end
 end
+
+#yes
