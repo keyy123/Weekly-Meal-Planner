@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const baseUrl = process.env.NODE_ENV === 'production'
-  ? 'deployed link'
+  ? ' link'
   : 'http://localhost:3000'
 
 
