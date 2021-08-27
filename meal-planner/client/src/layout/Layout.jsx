@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom'
 
 export default function Layout(props) {
+  const {currentUser, handleLogout} = props
   return (
     <header>
     <h1>App Name</h1>

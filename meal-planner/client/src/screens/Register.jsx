@@ -1,7 +1,9 @@
 import {useState} from 'react'
 
 export default function Register(props) {
-  const [registerData, setRegisterData] = useState({
+
+
+  const [formData, setFormData] = useState({
     username: '',
     email: '',
     password: ''
@@ -9,9 +11,9 @@ export default function Register(props) {
 
   const { handleRegister } = props
   
-  const handdleChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target
-    setRegisterData((...prevState) => ({
+    setFormData((prevState) => ({
       ...prevState,
       [name]:value,
     }))
