@@ -22,5 +22,5 @@ export const updateMenu = async (id, data) => {
 
 export const destroyMenu = async (id) => {
   const res = await api.delete(`/menu/${id}`)
-  return res.data
+  return res
 }

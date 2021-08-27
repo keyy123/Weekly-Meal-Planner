@@ -22,5 +22,6 @@ export const updateRecipe = async (id, data) => {
 
 export const deleteRecipe = async (id) => {
   const res = api.delete(`/menus/:menu_id/recipes/${id}`)
-  return res.data
+  return res
 }
+
