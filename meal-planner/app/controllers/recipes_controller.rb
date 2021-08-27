@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :update, :destroy]
+  before_action :authorize_request
 
   # GET /recipes
   def index
@@ -14,15 +15,30 @@ class RecipesController < ApplicationController
   end
 
   # POST /recipes
-  def create
-    @recipe = Recipe.new(recipe_params)
+  # def create
+   
+    
+  #   @menu = Menu.find(params[:menu_id])
+  #   @recipe = Recipe.new(recipe_params)
+   
+  #   if @recipe.save
+  #     render json: @recipe, status: :created
+  #   else
+  #     render json: @recipe.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-    if @recipe.save
-      render json: @recipe, status: :created, location: @recipe
-    else
-      render json: @recipe.errors, status: :unprocessable_entity
-    end
-  end
+
+def add_to_menu
+  @menu = Menu.find(params[:menu_id]) 
+  @recipes = Recipe.new(recipe_params)
+  @menu.recipes << @recipes 
+  render json: @recipes, include: :menu
+end
+
+
+
+
 
   # PATCH/PUT /recipes/1
   def update
@@ -46,6 +62,7 @@ class RecipesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def recipe_params
-      params.require(:recipe).permit(:name, :kcal, :pro, :carbs, :fat, :menu_id)
+      params.require(:recipes).permit(:name, :kcal, :pro, :carbs, :fat)
+      
     end
 end
