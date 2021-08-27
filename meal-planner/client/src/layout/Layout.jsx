@@ -1,4 +1,4 @@
-import React from 'react'
+import {Link} from 'react-router-dom'
 
 export default function Layout(props) {
   return (
@@ -10,7 +10,7 @@ export default function Layout(props) {
         <button onClick={handleLogout}>Logout</button>
       </div>
     ) : (
-      <Link to='/login'>Login/Register</Link>
+      <Link to='/login'>Login/SignUp</Link>
     )}
     <hr />
     {currentUser && (
