@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Switch, Route, useParams } from 'react-router-dom';
+import { Switch, Route, useParams, useHistory } from 'react-router-dom';
 import { readOneMenu } from '../services/menus';
-import { readRecipes, readRecipe, createRecipe, updateRecipe, deleteRecipe } from '../services/recipes';
+import { readRecipes, createRecipe, updateRecipe, deleteRecipe } from '../services/recipes';
 import Recipes from '../screens/Recipes'
 import RecipeDetail from '../screens/RecipeDetail'
 import RecipeEdit from '../screens/RecipeEdit'
@@ -11,11 +11,12 @@ import CreateRecipe from '../screens/CreateRecipe'
 
 
 //This will be the main container for my recipes which is nested within Menu Details (/menus/${id}/recipes) I also have a custom route for create for recipes
-export default function MenuDetail() {
+export default function MenuDetail(props) {
   const [menuItem, setMenuItem] = useState(null);
   const [recipes,setRecipes] = useState([])
   const { id } = useParams();
-  
+  const history = useHistory()
+  const {currentUser} = props
   //const { flavors } = props;
   //  const [selectedFlavor, setSelectedFlavor] = useState('');
 
@@ -27,27 +28,35 @@ export default function MenuDetail() {
     fetchMenuItem();
   }, [id]);
 
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      const recipeList = await readRecipes();
+      setRecipes(recipeList)
+    }
+    fetchRecipes()
+  }, [])
+  
   const handleCreate = async (formData) => {
-    const menuData = await createMenu(formData);
-    setMenus((prevState) => [...prevState, menuData]);
-    history.push('/menus');
+    const foodData = await createRecipe(formData);
+    setMenus((prevState) => [...prevState, foodData]);
+    history.push('/menus/:menu_id/recipes');
   };
   
   
 const handleUpdate = async (id, formData) => {
-  const menuData = await updateMenu(id, formData);
-  setMenus((prevState) =>
-    prevState.map((menu) => {
-      return menu.id === Number(id) ? menuData : menu;
+  const foodData = await updateRecipe(id, formData);
+  setRecipes((prevState) =>
+    prevState.map((recipe) => {
+      return recipe.id === Number(id) ? foodData : food;
     })
   );
-  history.push('/menus');
+  history.push('/menus/:menu_id/recipes');
 };
 
   
 const handleDelete = async (id) => {
-  await destroyMenu(id);
-  setMenus((prevState) => prevState.filter((menu) => menu.id !== id));
+  await deleteRecipe(id);
+  setRecipes((prevState) => prevState.filter((food) => food.id !== id));
 };
 
   // const handleChange = (e) => {
