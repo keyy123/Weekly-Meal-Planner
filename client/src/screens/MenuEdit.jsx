@@ -37,6 +37,7 @@ const handleChange = (e) => {
       history.push('/')
     }}
     >
+      <h3>Update {menuItem.name} Menu</h3>
         <label>
         Name:
         <input 
