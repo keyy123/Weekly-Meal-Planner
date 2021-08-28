@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Switch, Route, useParams } from 'react-router-dom';
 import { readOneMenu } from '../services/menus';
+import { readRecipes, readRecipe, createRecipe, updateRecipe, deleteRecipe } from '../services/recipes';
 //import { addFlavorToFood } from '../services/menus'; Add custom route for recipes here later
 
+
+
+//This will be the main container for my recipes which is nested within Menu Details (/menus/${id}/recipes) I also have a custom route for create for recipes
 export default function MenuDetail() {
   const [menuItem, setMenuItem] = useState(null);
   const { id } = useParams();
@@ -34,7 +38,8 @@ export default function MenuDetail() {
   return (
     <div>
       <h3>{menuItem?.name}</h3>
-      <p>{menuItem?.kcal}</p>
+      <p>Kcal/d: {menuItem?.kcal}</p>
+      <p>Duration: {menuItem?.start_date} to {menuItem?.end_date}</p>
       
     </div>
   )
