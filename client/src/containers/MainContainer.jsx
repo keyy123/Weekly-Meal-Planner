@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 import {getAllMenus, getOneMenu, createMenu, destroyMenu, updateMenu} from '../services/menus'
-
+import {Menus, MenuEdit, CreateMenu, MenuDetail } from '../screens'
 export default function MainContainer(props) {
   const [menus, setMenus] = useState([])
   const {currentUser} = props
@@ -47,7 +47,7 @@ const handleDelete = async (id) => {
           <MenuEdit menus={menus} handleUpdate={handleUpdate} />
         </Route>
         <Route path='/menus/new'>
-          <createMenu handleCreate={handleCreate} />
+          <CreateMenu handleCreate={handleCreate} />
         </Route>
         <Route path='/menus/:id'>
           <MenuDetail menus={menus} />
