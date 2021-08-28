@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
-import {getAllMenus, getOneMenu, createMenu, destroyMenu, updateMenu} from '../services/menus'
-import {Menus, MenuEdit, CreateMenu, MenuDetail } from '../screens'
+import {readAllMenus, createMenu, destroyMenu, updateMenu} from '../services/menus'
+import Menus from '../screens/Menus'
+import MenuEdit from '../screens/MenuEdit'
+import CreateMenu from '../screens/CreateMenu'
+import MenuDetail from '../screens/MenuDetail'
+
 export default function MainContainer(props) {
   const [menus, setMenus] = useState([])
   const {currentUser} = props
@@ -9,7 +13,7 @@ export default function MainContainer(props) {
 
   useEffect(() => {
     const fetchMenus = async () => {
-      const menuList = await getAllMenus();
+      const menuList = await readAllMenus();
       setMenus(menuList)
     }
     fetchMenus()
@@ -17,7 +21,7 @@ export default function MainContainer(props) {
 
 const handleCreate = async (formData) => {
   const menuData = await createMenu(formData);
-  setFoods((prevState) => [...prevState, menuData]);
+  setMenus((prevState) => [...prevState, menuData]);
   history.push('/menus');
 };
 
@@ -25,7 +29,7 @@ const handleUpdate = async (id, formData) => {
   const menuData = await updateMenu(id, formData);
   setMenus((prevState) =>
     prevState.map((menu) => {
-      return menu.id === Number(id) ? menuData : food;
+      return menu.id === Number(id) ? menuData : menu;
     })
   );
   history.push('/menus');

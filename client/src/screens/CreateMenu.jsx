@@ -1,13 +1,13 @@
 import {useState} from 'react'
 
-export default function createMenu(props) {
+export default function CreateMenu(props) {
   const [formData, setFormData] = useState({
     name: '',
     kcal: '',
     start_name: '',
     end_date:''
  })
-  const { name } = formData
+  const { name, kcal, start_date, end_date } = formData
   const { handleCreate } = props;
   
   const handleChange = (e) => {
@@ -30,7 +30,7 @@ export default function createMenu(props) {
         <input 
           type='text' 
           name='name' 
-          value={formData.name} 
+          value={name} 
           onChange={handleChange}
         />
       </label>
@@ -40,7 +40,7 @@ export default function createMenu(props) {
         <input 
           type='number' 
           name='kcal' 
-          value={formData.kcal} 
+          value={kcal} 
           onChange={handleChange}
         />
       </label>
@@ -49,7 +49,7 @@ export default function createMenu(props) {
         <input 
           type='datetime-local' 
           name='start_date' 
-          value={formData.start_date} 
+          value={start_date} 
           onChange={handleChange}
         />
       </label>
@@ -58,7 +58,7 @@ export default function createMenu(props) {
         <input 
           type='datetime-local' 
           name='end_date' 
-          value={formData.end_date} 
+          value={end_date} 
           onChange={handleChange}
         />
       </label>

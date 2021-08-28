@@ -37,7 +37,7 @@ const handleChange = (e) => {
       history.push('/')
     }}
     >
-      <h3>Update {menuItem.name} Menu</h3>
+      <h3>Update Menu</h3>
         <label>
         Name:
         <input 
@@ -69,7 +69,7 @@ const handleChange = (e) => {
       <label>
         End Date:
         <input 
-          type='datetime-local' 
+          type='datetime-local'
           name='end_date' 
           value={formData.end_date} 
           onChange={handleChange}
