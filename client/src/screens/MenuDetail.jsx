@@ -6,6 +6,7 @@ import { readOneMenu } from '../services/menus';
 export default function MenuDetail() {
   const [menuItem, setMenuItem] = useState(null);
   const { id } = useParams();
+  
   //const { flavors } = props;
   //  const [selectedFlavor, setSelectedFlavor] = useState('');
 
@@ -33,10 +34,8 @@ export default function MenuDetail() {
   return (
     <div>
       <h3>{menuItem?.name}</h3>
-      {menuItem?.map((menu) => {
-        <p key={menu.id}>{menu.name}</p>
-      //map area
-      })}
+      <p>{menuItem?.kcal}</p>
+      
     </div>
   )
 }                             
