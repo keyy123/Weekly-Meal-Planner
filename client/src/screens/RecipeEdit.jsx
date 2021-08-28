@@ -36,7 +36,6 @@ export default function RecipeEdit(props) {
     <form onSubmit={(e) => {
       e.preventDefault();
       handleUpdate(id, formData);
-      history.push('/')
     }}
     >
      <h3>Update Recipe</h3>
