@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { Switch, Route, useHistory } from 'react-router-dom'
+import { Switch, Route, useHistory, useParams } from 'react-router-dom'
 import { readAllMenus, createMenu, destroyMenu, updateMenu } from '../services/menus'
-import { createRecipe, updateRecipe } from '../services/recipes'
+import { readRecipes,createRecipe, updateRecipe, deleteRecipe} from '../services/recipes'
 import Menus from '../screens/Menus'
 import MenuEdit from '../screens/MenuEdit'
 import CreateMenu from '../screens/CreateMenu'
@@ -9,12 +9,15 @@ import MenuDetail from '../screens/MenuDetail'
 import CreateRecipe from '../screens/CreateRecipe'
 import RecipeEdit from '../screens/RecipeEdit'
 import RecipeDetail from '../screens/RecipeDetail'
+import Recipes from '../screens/Recipes'
 
 export default function MainContainer(props) {
   const [menus, setMenus] = useState([])
+  const [recipes, setRecipes] = useState([])
   const {currentUser} = props
   const history = useHistory()
-
+  const { id } = useParams()
+  
   useEffect(() => {
     const fetchMenus = async () => {
       const menuList = await readAllMenus();
@@ -23,6 +26,14 @@ export default function MainContainer(props) {
     fetchMenus()
 },[])
 
+useEffect(() => {
+  const fetchRecipes = async () => {
+    const recipeList = await readRecipes(id);
+    setRecipes(recipeList)
+  }
+  fetchRecipes()
+}, [id])
+  
 const handleCreate = async (formData) => {
   const menuData = await createMenu(formData);
   setMenus((prevState) => [...prevState, menuData]);
@@ -55,6 +66,10 @@ const handleRecipeCreate = async (id, formData) => {
     history.push('/menus/:menu_id/recipes');
   };
   
+  const handleRecipeDelete = async (id) => {
+    await deleteRecipe(id);
+    setRecipes((prevState) => prevState.filter((recipe) => recipe.id !== id));
+  };
   
   
   return (
@@ -68,6 +83,13 @@ const handleRecipeCreate = async (id, formData) => {
         </Route>
         <Route path='/menus/:id/recipes/:id'>
           <RecipeDetail />
+        </Route>
+        <Route path='/menus/:id'>
+          <Recipes
+            recipes={recipes}
+            handleDelete={handleRecipeDelete}
+        
+          />
         </Route>
         <Route path='/menus/:id/edit'>
           <MenuEdit menus={menus} handleUpdate={handleUpdate} />

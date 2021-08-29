@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams, useHistory } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
 import { readOneMenu } from '../services/menus';
 import { readRecipes, createRecipe, updateRecipe, deleteRecipe } from '../services/recipes';
-import Recipes from '../screens/Recipes'
-import RecipeDetail from '../screens/RecipeDetail'
-import RecipeEdit from '../screens/RecipeEdit'
-import CreateRecipe from '../screens/CreateRecipe'
+// import Recipes from '../screens/Recipes'
+// import RecipeDetail from '../screens/RecipeDetail'
+// import RecipeEdit from '../screens/RecipeEdit'
+// import CreateRecipe from '../screens/CreateRecipe'
 //import { addFlavorToFood } from '../services/menus'; Add custom route for recipes here later
 
 
@@ -27,13 +27,7 @@ export default function MenuDetail(props) {
     fetchMenuItem();
   }, [id]);
 
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      const recipeList = await readRecipes(id);
-      setRecipes(recipeList)
-    }
-    fetchRecipes()
-  }, [id])
+
   
  
 
@@ -68,9 +62,9 @@ export default function MenuDetail(props) {
           <Link to={`/menus/${menuItem?.id}/recipes/${recipe.id}`}>
             <p>{recipe.name}</p>
           </Link>
-          {currentUser?.id === menuItem.user_id && (
+          {currentUser?.id === menuItem?.user_id && (
             <div>
-              <Link to={`/menus/${menuItem.id}/recipes/${recipe.id}/edit`}>
+              <Link to={`/menus/${menuItem?.id}/recipes/${recipe?.id}/edit`}>
                 <button>Edit</button>
               </Link>
               <button onClick={() => handleDelete(menuItem.id)}>Delete</button>

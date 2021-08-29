@@ -1,20 +1,20 @@
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 export default function Recipes(props) {
-
-  const {recipes, handleDelete, currentUser} = props
+  const {id} = useParams()
+  const {recipes, handleDelete } = props
   
   return (
     <div>
     <h3>Recipes</h3>
-      {recipes.map((recipe) => (
-        <div key={recipe.id}>
-          <Link to={`/menus/:menu_id/recipes/${recipe.id}`}>
-            <p>{recipe.name}</p>
+      {recipes?.map((recipe) => (
+        <div key={recipe?.id}>
+          <Link to={`/menus/${id}/recipes/${recipe.id}`}>
+            <p>{recipe?.name}</p>
           </Link>
-          {currentUser (
+          {id === recipe?.menu_id &&  (
             <div>
-              <Link to={`/menus/:menu_id/recipes/${recipe.id}/edit`}>
+              <Link to={`/menus/${id}/recipes/${recipe.id}/edit`}>
                 <button>Edit</button>
               </Link>
               <button onClick={()=> handleDelete(recipe.id)}>Delete</button>
@@ -22,7 +22,7 @@ export default function Recipes(props) {
           )}
         </div>
       ))}
-      <Link to='/menus/:menu_id/recipes/new'>
+      <Link to={`/menus/${id}/recipes/new`}>
         <button>Create</button>
       </Link>
     </div>
