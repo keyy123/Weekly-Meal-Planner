@@ -1,5 +1,5 @@
 import {useState} from 'react'
-
+import { useParams } from 'react-router';
 export default function CreateRecipe(props) {
   const [formData, setFormData] = useState({
     name: '',
@@ -10,7 +10,8 @@ export default function CreateRecipe(props) {
   })
 
   const { name, kcal, pro, carbs, fat } = formData
-  const {handleCreate } = props
+  const { handleCreate } = props;
+  const { id } = useParams()
   
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,7 +24,9 @@ export default function CreateRecipe(props) {
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
-      handleCreate(formData);
+      debugger
+      handleCreate(id,formData);
+
     }}>
        <label>
         Name:

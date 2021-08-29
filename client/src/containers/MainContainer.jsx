@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
-import {readAllMenus, createMenu, destroyMenu, updateMenu} from '../services/menus'
+import { readAllMenus, createMenu, destroyMenu, updateMenu } from '../services/menus'
+import { createRecipe, updateRecipe } from '../services/recipes'
 import Menus from '../screens/Menus'
 import MenuEdit from '../screens/MenuEdit'
 import CreateMenu from '../screens/CreateMenu'
 import MenuDetail from '../screens/MenuDetail'
+import CreateRecipe from '../screens/CreateRecipe'
+import RecipeEdit from '../screens/RecipeEdit'
+import RecipeDetail from '../screens/RecipeDetail'
 
 export default function MainContainer(props) {
   const [menus, setMenus] = useState([])
@@ -40,13 +44,31 @@ const handleDelete = async (id) => {
   setMenus((prevState) => prevState.filter((menu) => menu.id !== id));
 };
 
-  
+const handleRecipeCreate = async (id, formData) => {
+  await createRecipe(id, formData);
+  history.push(`/menus/${id}/recipes`);
+};
+
+
+  const handleRecipeUpdate = async (id, formData) => {
+    await updateRecipe(id, formData);
+    history.push('/menus/:menu_id/recipes');
+  };
   
   
   
   return (
     <div>
       <Switch>
+        <Route path='/menus/:id/recipes/:id/edit'>
+          <RecipeEdit handleUpdate={handleRecipeUpdate}/>
+        </Route>
+        <Route path ='/menus/:id/recipes/new'>
+          <CreateRecipe handleCreate={handleRecipeCreate}/>
+        </Route>
+        <Route path='/menus/:id/recipes/:id'>
+          <RecipeDetail />
+        </Route>
         <Route path='/menus/:id/edit'>
           <MenuEdit menus={menus} handleUpdate={handleUpdate} />
         </Route>

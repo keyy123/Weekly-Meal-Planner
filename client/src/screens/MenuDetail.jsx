@@ -15,7 +15,6 @@ export default function MenuDetail(props) {
   const [menuItem, setMenuItem] = useState(null);
   const [recipes, setRecipes] = useState([])
   const { id } = useParams();
-  const history = useHistory()
   const { currentUser } = props
   //const { flavors } = props;
   //  const [selectedFlavor, setSelectedFlavor] = useState('');
@@ -30,28 +29,13 @@ export default function MenuDetail(props) {
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      const recipeList = await readRecipes();
+      const recipeList = await readRecipes(id);
       setRecipes(recipeList)
     }
     fetchRecipes()
-  }, [])
+  }, [id])
   
-  const handleCreate = async (formData) => {
-    const recipeData = await createRecipe(formData);
-    setRecipes((prevState) => [...prevState, recipeData]);
-    history.push('/menus/:menu_id/recipes');
-  };
-  
-  
-  const handleUpdate = async (id, formData) => {
-    const recipeData = await updateRecipe(id, formData);
-    setRecipes((prevState) =>
-      prevState.map((recipe) => {
-        return recipe.id === Number(id) ? recipeData : recipe;
-      })
-    );
-    history.push('/menus/:menu_id/recipes');
-  };
+ 
 
   
   const handleDelete = async (id) => {
@@ -77,26 +61,29 @@ export default function MenuDetail(props) {
       <h3>{menuItem?.name}</h3>
       <p>Kcal/d: {menuItem?.kcal}</p>
       <p>Duration: {menuItem?.start_date} to {menuItem?.end_date}</p>
-      {menuItem?.recipes.map((recipe) => (
+   
+      <h4>Recipes</h4>
+      {recipes?.map((recipe) => (
         <div key={recipe.id}>
-          <Link to={`menus/${menuItem.id}/recipes/${recipe.id}`}>
-          <RecipeEdit recipes={recipes} handleUpdate={handleUpdate}/>
-        </Link>
-          <Link to={`menus/${menuItem.id}/recipes/`}>
-            <CreateRecipe handleCreate={handleCreate} />
+          <Link to={`/menus/${menuItem?.id}/recipes/${recipe.id}`}>
+            <p>{recipe.name}</p>
           </Link>
-          <Link to={`menus/${menuItem.id}/recipes/${recipe.id}`}>
-            <RecipeDetail recipes={recipes} />
-          </Link>
-          <Link to={`menus/${menuItem.id}/recipes`}>
-          <Recipes recipes={recipes}
-            handleDelete={handleDelete}
-            currentUser={currentUser}
-          />
-          </Link>
+          {currentUser?.id === menuItem.user_id && (
+            <div>
+              <Link to={`/menus/${menuItem.id}/recipes/${recipe.id}/edit`}>
+                <button>Edit</button>
+              </Link>
+              <button onClick={() => handleDelete(menuItem.id)}>Delete</button>
+            </div>
+          )}
         </div>
       ))}
-    </div>
+      <Link to={`/menus/${menuItem?.id}/recipes/new`}>
+        <button>Create</button>
+      </Link>
+   </div>
+    
+    
 
     
     
@@ -112,6 +99,37 @@ export default function MenuDetail(props) {
 //Going from a specific menu to a recipe, creating
     
 {/* <Switch>
-{/* <Link to={`menus/${menuItem.id}/recipes/${recipe.id}`}>
+<Link to={`menus/${menuItem.id}/recipes/${recipe.id}`}>
           <RecipeEdit recipes={recipes} handleUpdate={handleUpdate}/>
-        </Link> */}
+        </Link>
+<Route path="menus/:menu_id/recipes/">
+  <CreateRecipe handleCreate={handleCreate}/>
+</Route>
+<Route path="menus/:menu_id/recipes/:id">
+  <RecipeDetail recipes={recipes}/>
+</Route>
+<Route path="menus/:menu_id/recipes">
+  <Recipes recipes={recipes}
+    handleDelete={handleDelete}
+    currentUser={currentUser}
+  />
+</Route>
+</Switch> */}
+
+
+// {menuItem?.recipes.map((recipe) => (
+//   <div key={recipe.id}>
+//     <Link to={`menus/${menuItem.id}/recipes/${recipe.id}`}>
+//     <RecipeEdit recipes={recipes} handleUpdate={handleUpdate}/>
+//   </Link>
+//     <Link to={`menus/${menuItem.id}/recipes/`}>
+//       <CreateRecipe handleCreate={handleCreate} />
+//     </Link>
+//     <Link to={`menus/${menuItem.id}/recipes/${recipe.id}`}>
+//       <RecipeDetail recipes={recipes} />
+//     </Link>
+//     <Link to={`menus/${menu_id}/recipes`}>
+//     <Recipes recipes={recipes}
+//       handleDelete={handleDelete}
+//       currentUser={currentUser}
+//   />                        
