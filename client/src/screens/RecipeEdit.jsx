@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useHistory } from 'react-router';
 
 export default function RecipeEdit(props) {
   const [formData, setFormData] = useState({
@@ -13,7 +12,7 @@ export default function RecipeEdit(props) {
 
   const { recipes, handleUpdate } = props
   const { id } = useParams()
-  const history = useHistory()
+
 
   useEffect(() => {
     const prefillFormData = () => {

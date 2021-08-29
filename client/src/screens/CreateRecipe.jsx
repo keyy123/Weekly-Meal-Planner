@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 
 export default function CreateRecipe(props) {
   const [formData, setFormData] = useState({
@@ -30,7 +30,7 @@ export default function CreateRecipe(props) {
         <input 
           type='text' 
           name='name' 
-          value={formData.name} 
+          value={name} 
           onChange={handleChange}
         />
       </label>
@@ -40,7 +40,7 @@ export default function CreateRecipe(props) {
         <input 
           type='number' 
           name='kcal' 
-          value={formData.kcal} 
+          value={kcal} 
           onChange={handleChange}
         />
       </label>
@@ -49,7 +49,7 @@ export default function CreateRecipe(props) {
         <input 
           type='number' 
           name='pro' 
-          value={formData.pro} 
+          value={pro} 
           onChange={handleChange}
         />
       </label>
@@ -58,7 +58,7 @@ export default function CreateRecipe(props) {
         <input 
           type='number' 
           name='carbs' 
-          value={formData.carbs} 
+          value={carbs} 
           onChange={handleChange}
         />
       </label>
@@ -67,7 +67,7 @@ export default function CreateRecipe(props) {
         <input 
           type='number' 
           name='fat' 
-          value={formData.fat} 
+          value={fat} 
           onChange={handleChange}
         />
       </label>

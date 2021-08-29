@@ -7,7 +7,7 @@ export default function Recipes(props) {
   return (
     <div>
     <h3>Recipes</h3>
-      {recipes.map((recipe) => {
+      {recipes.map((recipe) => (
         <div key={recipe.id}>
           <Link to={`/menus/:menu_id/recipes/${recipe.id}`}>
             <p>{recipe.name}</p>
@@ -21,7 +21,7 @@ export default function Recipes(props) {
             </div>             
           )}
         </div>
-      })}
+      ))}
       <Link to='/menus/:menu_id/recipes/new'>
         <button>Create</button>
       </Link>
