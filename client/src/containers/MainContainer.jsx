@@ -76,13 +76,13 @@ const handleRecipeCreate = async (id, formData) => {
     <div>
       <Switch>
         <Route path='/menus/:id/recipes/:id/edit'>
-          <RecipeEdit handleUpdate={handleRecipeUpdate}/>
+          <RecipeEdit recipes={recipes} handleUpdate={handleRecipeUpdate}/>
         </Route>
         <Route path ='/menus/:id/recipes/new'>
           <CreateRecipe handleCreate={handleRecipeCreate}/>
         </Route>
         <Route path='/menus/:id/recipes/:id'>
-          <RecipeDetail />
+          <RecipeDetail handleDelete={handleRecipeDelete} handleUpdate={handleRecipeUpdate}/>
         </Route>
         <Route path ='/menus/:id/recipes'>
           <Recipes

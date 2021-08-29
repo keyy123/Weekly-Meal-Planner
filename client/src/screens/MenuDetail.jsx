@@ -73,7 +73,7 @@ export default function MenuDetail(props) {
           )}
         </div>
       ))} */}
-      <Link to={`/menus/${id}/recipes/`}>
+      <Link to={`/menus/${menuItem?.id}/recipes/`}>
         <p>All Recipes In {menuItem?.name}</p>
       </Link>
       <Link to={`/menus/${menuItem?.id}/recipes/new`}>
