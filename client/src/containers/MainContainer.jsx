@@ -84,11 +84,10 @@ const handleRecipeCreate = async (id, formData) => {
         <Route path='/menus/:id/recipes/:id'>
           <RecipeDetail />
         </Route>
-        <Route path='/menus/:id'>
+        <Route path ='/menus/:id'>
           <Recipes
             recipes={recipes}
             handleDelete={handleRecipeDelete}
-        
           />
         </Route>
         <Route path='/menus/:id/edit'>

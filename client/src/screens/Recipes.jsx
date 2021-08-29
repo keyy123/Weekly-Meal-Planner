@@ -12,14 +12,14 @@ export default function Recipes(props) {
           <Link to={`/menus/${id}/recipes/${recipe.id}`}>
             <p>{recipe?.name}</p>
           </Link>
-          {id === recipe?.menu_id &&  (
+          
             <div>
               <Link to={`/menus/${id}/recipes/${recipe.id}/edit`}>
                 <button>Edit</button>
               </Link>
               <button onClick={()=> handleDelete(recipe.id)}>Delete</button>
             </div>             
-          )}
+        
         </div>
       ))}
       <Link to={`/menus/${id}/recipes/new`}>
