@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Switch, Route, useParams, useHistory } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import { readOneMenu } from '../services/menus';
 import { readRecipes, createRecipe, updateRecipe, deleteRecipe } from '../services/recipes';
 import Recipes from '../screens/Recipes'
@@ -88,7 +88,7 @@ export default function MenuDetail(props) {
           <Link to={`menus/${menuItem.id}/recipes/${recipe.id}`}>
             <RecipeDetail recipes={recipes} />
           </Link>
-          <Link to={`menus/${menu_id}/recipes`}>
+          <Link to={`menus/${menuItem.id}/recipes`}>
           <Recipes recipes={recipes}
             handleDelete={handleDelete}
             currentUser={currentUser}
