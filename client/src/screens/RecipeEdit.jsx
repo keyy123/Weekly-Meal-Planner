@@ -19,7 +19,7 @@ export default function RecipeEdit(props) {
       const recipeItem = recipes.find((recipe) => recipe.id === Number(id));
       setFormData({ name: recipeItem.name, kcal: recipeItem.kcal, pro: recipeItem.pro, carbs: recipeItem.carbs, fat: recipeItem.fat })
     }
-    if (recipes.length) {
+    if (recipes?.length) {
       prefillFormData()
     }
   },[recipes, id])

@@ -57,11 +57,12 @@ export default function MenuDetail(props) {
       <p>Duration: {menuItem?.start_date} to {menuItem?.end_date}</p>
    
       <h4>Recipes</h4>
-      {recipes?.map((recipe) => (
+      {/* {recipes?.map((recipe) => (
         <div key={recipe.id}>
-          <Link to={`/menus/${menuItem?.id}/recipes/${recipe.id}`}>
-            <p>{recipe.name}</p>
+          <Link to={`/menus/${id}/recipes/`}>
+            <p>All Recipes In Menu</p>
           </Link>
+
           {currentUser?.id === menuItem?.user_id && (
             <div>
               <Link to={`/menus/${menuItem?.id}/recipes/${recipe?.id}/edit`}>
@@ -71,7 +72,10 @@ export default function MenuDetail(props) {
             </div>
           )}
         </div>
-      ))}
+      ))} */}
+      <Link to={`/menus/${id}/recipes/`}>
+        <p>All Recipes In {menuItem?.name}</p>
+      </Link>
       <Link to={`/menus/${menuItem?.id}/recipes/new`}>
         <button>Create</button>
       </Link>
