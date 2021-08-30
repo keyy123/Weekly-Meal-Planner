@@ -1,11 +1,12 @@
 import {Link} from 'react-router-dom'
-import { AppBar, Toolbar } from '@material-ui/core'
+import { AppBar, Toolbar, Tabs, Tab, useMediaQuery,useTheme, Drawer, IconButton}  from '@material-ui/core'
 import { makeStyles, ThemeProvider } from '@material-ui/styles'
 import theme from '../Components/ui/Theme.js'
 import "./Layout.css" 
-import logo from "../Assets/logo.png"
-import { Tabs, Tab, useMediaQuery,useTheme } from '@material-ui/core'
+import logov3 from "../Assets/logov3.png"
+//import {  Drawer } from '@material-ui/core'
 import { useState, useEffect } from 'react'
+import MenuIcon from "@material-ui/icons/Menu"
 
 
 const useStyles = makeStyles({
@@ -13,10 +14,10 @@ const useStyles = makeStyles({
     ...theme.mixins.toolbar,
     marginBottom: "2em",
     [theme.breakpoints.down("md")]:{
-      marginBottom: "1.5em"
+      marginBottom: "1em"
     },
     [theme.breakpoints.down("xs")]:{
-      marginBottom: "1.2em"
+      marginBottom: "0em"
     }
   },
   tabContainer: {
@@ -32,12 +33,19 @@ marginLeft:"auto"
   },
   logo: {
     height: "15em",
-    // [theme.breakpoints.down("md")]: {
-    //   height: "10em"
-    // },
-    // [theme.breakpoints.down("xs")]: {
-    //   height: "8.5em"
-    // }
+     [theme.breakpoints.down("md")]: {
+       height: "12.5em"
+     },
+     [theme.breakpoints.down("xs")]: {
+       height: "10em"
+     }
+  },
+  drawer: {
+    marginLeft: "auto" 
+  },
+  drawerIcon: {
+    height: "50px",
+    width: "50px"
   }
 
     })
@@ -46,11 +54,19 @@ marginLeft:"auto"
 export default function Layout(props) {
   const {currentUser, handleLogout} = props
   const theme = useTheme();
- const matches = useMediaQuery(theme.breakpoints.down("md"))
-
+  const matches = useMediaQuery(theme.breakpoints.down("md"))
   const classes = useStyles()
-
   const [value, setValue] = useState(0)
+  const [openDrawer, setOpenDrawer] = useState(false)
+  
+  const handleDrawerOpen = () => {
+    setOpenDrawer(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpenDrawer(false);
+  };
+
 
   const handleChange = (e, value) => {
     setValue(value)
@@ -120,14 +136,32 @@ export default function Layout(props) {
       </>
   )
   
+  const drawer = (
+    <>
+      <Drawer
+        variant="persistent"
+        anchor="right"
+        open={openDrawer}
+        className={classes.drawer}
+        onClose={() => { setOpenDrawer(!openDrawer) }}
+        onOpen={() => { setOpenDrawer(true) }}
+      >
+        Practice
+      </Drawer>
+      <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
+        <MenuIcon className={classes.drawerIcon}/>
+      </IconButton>
+</>
+ )
+
   return (
     <>
     <ThemeProvider theme={theme}>
       <AppBar position="fixed" className="AppBar" >
           <Toolbar disableGutters>
-            <img className={classes.logo}src={logo} alt="company logo"/>
+            <img className={classes.logo}src={logov3} alt="company logo"/>
     {/* <h1 className="Title">Meal Prepper</h1> */}
-    {matches ? null : tabs }
+    {matches ? drawer : tabs }
           </Toolbar>
       </AppBar>
       </ThemeProvider>

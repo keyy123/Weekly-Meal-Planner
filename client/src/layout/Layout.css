@@ -48,4 +48,14 @@
     background-color: steelblue;
     padding-left: 25px;
   }
+
+  #root > div > header > div {
+    margin-top: 0px;
+    height: 95px;
+  }
+
+  #root > div > header > div > img{
+    height: 192px;
+    width: 210px;
+  }
 }
