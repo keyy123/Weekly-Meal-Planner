@@ -29,6 +29,7 @@ export default function Login(props) {
           name='username'
           value={formData.username}
           onChange={handleChange}
+          
         />
       </label>
       <br />
@@ -39,6 +40,7 @@ export default function Login(props) {
           name='password'
           value={formData.password}
           onChange={handleChange}
+          
         />
       </label>
       <br />

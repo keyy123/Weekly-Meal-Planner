@@ -44,10 +44,10 @@ handleVerify()
     <div className="App">
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
-          <Route path="/login">
+          <Route path="/Login">
             <Login handleLogin={handleLogin} />
           </Route>
-          <Route path='/register'>
+          <Route path='/Register'>
             <Register handleRegister={handleRegister}/>
           </Route>
           <Route path='/'>
