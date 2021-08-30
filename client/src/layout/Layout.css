@@ -1,0 +1,26 @@
+*{
+  font-size: 14px;
+}
+
+.Layout{
+  text-decoration: none;
+  color: #19252B;
+}
+
+.Nav{
+  font-size: 1rem;
+  font-weight: 700;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.Title{
+  font-size: 1.75rem;
+}
+
+.Logout{
+  border: 1px transparent none;
+  background-color: transparent;
+  font-weight: 700;
+}

@@ -15,6 +15,10 @@ export default function RecipeDetail(props) {
     fetchRecipe()
   }, [id])
   
+  //thank you w3Schools
+  const goBack = () => {
+    window.history.back();
+  }
   
 
   return (
@@ -26,10 +30,11 @@ export default function RecipeDetail(props) {
       <p>Fats(g): {recipe?.fat}</p>
       {/* <Link to={`/menus/${recipe?.menu_id}/recipes/${recipe?.id}/edit`}> */}
         
-      <Link to={`/menus/${recipe?.menu.id}/recipes/${id}/edit`}>
+      <Link to={`/menus/${recipe?.menu?.id}/recipes/${id}/edit`}>
         <button>Edit</button>
       </Link>
-        <button onClick={()=> handleDelete(recipe?.id)}>Delete</button>
+      <button onClick={() => handleDelete(recipe?.id)}>Delete</button>
+      <button onClick={() => goBack()}>Back</button>
     </div>
   )
 }
