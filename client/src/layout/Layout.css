@@ -4,23 +4,40 @@
 
 .Layout{
   text-decoration: none;
-  color: #19252B;
+  color: #3EB6D2;
+  padding-left: 25px;
 }
 
-.Nav{
-  font-size: 1rem;
-  font-weight: 700;
+/* .Nav{
+  font-size: 2rem;
+  font-weight: 800;
   margin-left: auto;
   display: flex;
   align-items: center;
-}
+  font-family: 'Heebo', sans-serif;
+} */
 
-.Title{
+/* .Title{
   font-size: 1.75rem;
-}
+} */
 
-.Logout{
+ .Logout{
   border: 1px transparent none;
   background-color: transparent;
-  font-weight: 700;
+  font-weight: 800;
+  color: #3EB6D2;
+  padding-left: 25px;
 }
+/* 
+.Login{
+  text-decoration: none;
+  color: #3EB6D2;
+  font-weight: 800;
+} */
+
+/* span.MuiTab-wrapper{
+  font-family: 'Heebo',sans-serif;
+  text-transform: none;
+  font-weight: 800;
+  font-size: 1rem;
+} */

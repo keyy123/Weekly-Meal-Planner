@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-
+import { Fab } from '@material-ui/core'
+import AddIcon from '@material-ui/icons/Add'
 export default function Menus(props) {
 const {menus, handleDelete, currentUser} = props
 
@@ -22,7 +23,10 @@ const {menus, handleDelete, currentUser} = props
         </div>
       ))}
       <Link to='/menus/new'>
-        <button>Create</button>
+        <Fab color="secondary" aria-label="add" size="medium">
+          <AddIcon />
+          </Fab>
+ 
       </Link>
     </div>
   )

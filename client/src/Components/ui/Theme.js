@@ -16,7 +16,15 @@ export default createTheme({
     secondary: {
       main:`${DownyBlue}`
     }
-}
+  },
+  typography: {
+    tab: {
+      fontFamily: "Heebo",
+      textTransform: "none",
+      fontWeight: 700,
+      fontSize: "2em"
+    }
+  },
 
 
 });
