@@ -7,7 +7,11 @@ import logov3 from "../Assets/logov3.png"
 //import {  Drawer } from '@material-ui/core'
 import { useState, useEffect } from 'react'
 import MenuIcon from "@material-ui/icons/Menu"
-
+import RestaurantMenuRoundedIcon from '@material-ui/icons/RestaurantMenuRounded';
+import { ListItemText, List, ListItem, Divider, ListItemIcon } from '@material-ui/core'
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
+import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
+import AccountBoxRoundedIcon from '@material-ui/icons/AccountBoxRounded';
 
 const useStyles = makeStyles({
   toolbarMargin: {
@@ -58,7 +62,12 @@ export default function Layout(props) {
   const classes = useStyles()
   const [value, setValue] = useState(0)
   const [openDrawer, setOpenDrawer] = useState(false)
-  
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
+  const handleListItemOnClick = (e, index) => {
+    setSelectedIndex(index);
+}
+
   const handleDrawerOpen = () => {
     setOpenDrawer(true);
   };
@@ -140,13 +149,62 @@ export default function Layout(props) {
     <>
       <Drawer
         variant="persistent"
-        anchor="right"
+        anchor="left"
         open={openDrawer}
         className={classes.drawer}
-        onClose={() => { setOpenDrawer(!openDrawer) }}
-        onOpen={() => { setOpenDrawer(true) }}
+        onClose={() => { handleDrawerClose() }}
+        onOpen={() => { handleDrawerOpen() }}
       >
-        Practice
+      <List>
+          <ListItem>
+            <ListItemIcon>
+              <AccountBoxRoundedIcon/>
+            </ListItemIcon>
+            <ListItemText primary={currentUser? `Welcome ${currentUser.username}` : `Please Login`}/>
+          </ListItem>
+        </List>
+        <Divider/>
+        <List>
+          <ListItem
+            component={Link} to="/Home"
+            button
+            selected={selectedIndex === 0}
+            onClick={(e)=>handleListItemOnClick(e,0)}
+          >
+            <ListItemIcon>
+              <HomeRoundedIcon/>
+            </ListItemIcon>
+            <ListItemText primary="Home"/>
+          </ListItem>
+        </List>
+        <Divider />
+        <List>
+          <ListItem
+            component={Link} to="/menus"
+            button
+            selected={selectedIndex === 1}
+            onClick={(e)=>handleListItemOnClick(e,1)}
+          >
+            <ListItemIcon>
+                <RestaurantMenuRoundedIcon/>
+            </ListItemIcon>
+            <ListItemText primary="Menus"/>
+          </ListItem>
+        </List>
+        <Divider />
+        <List>
+          <ListItem
+            onClick={() => handleLogout}
+            button
+            selected={selectedIndex === 2}
+            onClick={(e)=>handleListItemOnClick(e,2)}
+          >
+            <ListItemIcon>
+              <ExitToAppRoundedIcon/>
+            </ListItemIcon>
+            <ListItemText primary="Logout"/>
+          </ListItem>
+        </List>
       </Drawer>
       <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
         <MenuIcon className={classes.drawerIcon}/>
