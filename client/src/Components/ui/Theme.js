@@ -19,12 +19,13 @@ export default createTheme({
   },
   typography: {
     tab: {
-      fontFamily: "Heebo",
+      fontFamily: "Heebo, sans-serif",
       textTransform: "none",
       fontWeight: 700,
       fontSize: "2em"
     }
   },
+   
 
 
 });

@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import { AppBar, Toolbar, Tabs, Tab, useMediaQuery,useTheme, Drawer, IconButton}  from '@material-ui/core'
 import { makeStyles, ThemeProvider } from '@material-ui/styles'
 import theme from '../Components/ui/Theme.js'
@@ -50,7 +50,21 @@ marginLeft:"auto"
   drawerIcon: {
     height: "50px",
     width: "50px"
+  },
+  drawerStyle: {
+    backgroundColor: theme.palette.common.Blue
+  },
+  drawerItem: {
+    ...theme.typography.tab,
+    color: "White",
+    [theme.breakpoints.down("md")]: {
+    fontSize:"1rem"      
+    }
+  },
+  drawerStyle2: {
+    backgroundColor: theme.palette.common.LightBlue
   }
+
 
     })
 
@@ -62,23 +76,15 @@ export default function Layout(props) {
   const classes = useStyles()
   const [value, setValue] = useState(0)
   const [openDrawer, setOpenDrawer] = useState(false)
-  const [selectedIndex, setSelectedIndex] = useState(0)
-
-  const handleListItemOnClick = (e, index) => {
-    setSelectedIndex(index);
-}
-
-  const handleDrawerOpen = () => {
-    setOpenDrawer(true);
-  };
-
+ const history = useHistory()
+  
   const handleDrawerClose = () => {
     setOpenDrawer(false);
   };
 
 
-  const handleChange = (e, value) => {
-    setValue(value)
+  const handleChange = (e, newValue) => {
+    setValue(newValue)
   }
 
   useEffect(() => {
@@ -97,7 +103,8 @@ export default function Layout(props) {
     else if (window.location.pathname === "/Register" && value !== 4) {
       setValue(4)
     }
-},[value])
+  }, [value])
+  
 
   const tabs = (
     <>
@@ -153,56 +160,63 @@ export default function Layout(props) {
         open={openDrawer}
         className={classes.drawer}
         onClose={() => { handleDrawerClose() }}
-        onOpen={() => { handleDrawerOpen() }}
+        classes={{paper: classes.drawerStyle }}
       >
       <List>
-          <ListItem>
+          <ListItem
+            
+          >
             <ListItemIcon>
               <AccountBoxRoundedIcon/>
             </ListItemIcon>
-            <ListItemText primary={currentUser? `Welcome ${currentUser.username}` : `Please Login`}/>
+            <ListItemText className={classes.drawerItem} disableTypography primary={currentUser? `Welcome ${currentUser.username}` : `Please Login`}/>
           </ListItem>
         </List>
         <Divider/>
         <List>
           <ListItem
+            selected={value === 2}
             component={Link} to="/Home"
             button
-            selected={selectedIndex === 0}
-            onClick={(e)=>handleListItemOnClick(e,0)}
+            // onClick={(e)=>handleListItemOnClick(e,0)}
+            onClick={() => {setOpenDrawer(false); setValue(2)}} 
           >
             <ListItemIcon>
               <HomeRoundedIcon/>
             </ListItemIcon>
-            <ListItemText primary="Home"/>
+            <ListItemText className={classes.drawerItem} disableTypography primary="Home"/>
           </ListItem>
         </List>
         <Divider />
         <List>
           <ListItem
+           selected={value===1}
             component={Link} to="/menus"
-            button
-            selected={selectedIndex === 1}
-            onClick={(e)=>handleListItemOnClick(e,1)}
+            // onClick={(e)=>handleListItemOnClick(e,1)}
+            //onClick={() => setOpenDrawer(false)}
+            button onClick={() => {setOpenDrawer(false); setValue(1)}}
+            
           >
             <ListItemIcon>
                 <RestaurantMenuRoundedIcon/>
             </ListItemIcon>
-            <ListItemText primary="Menus"/>
+            <ListItemText className={classes.drawerItem} disableTypography primary="Menus"/>
           </ListItem>
         </List>
         <Divider />
         <List>
           <ListItem
-            onClick={() => handleLogout}
-            button
-            selected={selectedIndex === 2}
-            onClick={(e)=>handleListItemOnClick(e,2)}
+            
+            selected={value===0}
+            button onClick={() => {{currentUser ? (handleLogout()) : (history.push('/Login'))};setValue(0)}}
+            className={classes.drawerStyle2}
+            
+            // onClick={(e)=>handleListItemOnClick(e,2)}
           >
             <ListItemIcon>
               <ExitToAppRoundedIcon/>
             </ListItemIcon>
-            <ListItemText primary="Logout"/>
+            <ListItemText className={classes.drawerItem} disableTypography primary={currentUser ? "Logout" : "Login"}/>
           </ListItem>
         </List>
       </Drawer>

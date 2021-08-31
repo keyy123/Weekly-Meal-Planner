@@ -6,6 +6,7 @@ import { useHistory, Switch, Route } from 'react-router-dom';
 import Login from './screens/Login'
 import Register from './screens/Register';
 import MainContainer from './containers/MainContainer';
+import Home from '../src/screens/Home/Home'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
@@ -49,6 +50,9 @@ handleVerify()
           </Route>
           <Route path='/Register'>
             <Register handleRegister={handleRegister}/>
+          </Route>
+          <Route path="/Home">
+            <Home />         
           </Route>
           <Route path='/'>
             <MainContainer currentUser={currentUser}/>
