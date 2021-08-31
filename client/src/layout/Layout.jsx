@@ -12,6 +12,7 @@ import { ListItemText, List, ListItem, Divider, ListItemIcon } from '@material-u
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
 import AccountBoxRoundedIcon from '@material-ui/icons/AccountBoxRounded';
+import Footer from '../Components/Footer/Footer.jsx'
 
 const useStyles = makeStyles({
   toolbarMargin: {
@@ -63,6 +64,9 @@ marginLeft:"auto"
   },
   drawerStyle2: {
     backgroundColor: theme.palette.common.LightBlue
+  },
+  appbar: {
+    position: "relative"
   }
 
 
@@ -114,7 +118,7 @@ export default function Layout(props) {
               <p>{currentUser.username}</p>
               <Tabs
                       value={value}
-                      indicatorColor="secondary"
+                      indicatorColor="primary"
                       onChange={handleChange}
                       className={classes.tabContainer}
                     >
@@ -131,7 +135,7 @@ export default function Layout(props) {
                     
                       <Tabs
                         value={value}
-                        indicatorColor="secondary"
+                        indicatorColor="primary"
                         onChange={handleChange}
                         className={classes.tabContainer}
                       >
@@ -208,7 +212,7 @@ export default function Layout(props) {
           <ListItem
             
             selected={value===0}
-            button onClick={() => {{currentUser ? (handleLogout()) : (history.push('/Login'))};setValue(0)}}
+            button onClick={() => { currentUser ? (handleLogout()) : (history.push('/Login')); setValue(0) }}
             className={classes.drawerStyle2}
             
             // onClick={(e)=>handleListItemOnClick(e,2)}
@@ -229,7 +233,7 @@ export default function Layout(props) {
   return (
     <>
     <ThemeProvider theme={theme}>
-      <AppBar position="fixed" className="AppBar" >
+      <AppBar position="fixed" className={classes.appbar} color="primary">
           <Toolbar disableGutters>
             <img className={classes.logo}src={logov3} alt="company logo"/>
     {/* <h1 className="Title">Meal Prepper</h1> */}
@@ -237,11 +241,12 @@ export default function Layout(props) {
           </Toolbar>
       </AppBar>
       </ThemeProvider>
-      <div className={classes.toolbarMargin} />
-      <div className={classes.toolbarMargin} />
-      <div className={classes.toolbarMargin} />
+      {/* <div className={classes.toolbarMargin} /> */}
+      {/* <div className={classes.toolbarMargin} /> */}
+      {/* <div className={classes.toolbarMargin} /> */}
       
-        {props.children}
+      {props.children}
+      <Footer/>
       </>
   )
 }
