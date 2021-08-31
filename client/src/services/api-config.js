@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const baseUrl = process.env.NODE_ENV === 'production'
-  ? ' https://kheyyon-api.herokuapp.com/'
+  ? 'https://kheyyon-api.herokuapp.com/'
   : 'http://localhost:3000'
 
 
