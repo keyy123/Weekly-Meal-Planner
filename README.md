@@ -29,8 +29,6 @@ The _**Weekly Meal Planner** is a simple application that will allow users to st
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
 The _**Weekly Meal Planner**  MVP requirements are the following: 
 
 ### Backend(Server)
