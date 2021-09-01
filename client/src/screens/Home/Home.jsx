@@ -5,7 +5,8 @@ import Lottie from 'react-lottie'
 import animationData from '../../animations/path.json'
 import animationData2 from '../../animations/fatigue.json'
 import { makeStyles, Grid, Button, Typography, Paper } from '@material-ui/core'
-import theme from '../../Components/ui/Theme.js' 
+import theme from '../../Components/ui/Theme.js'
+import {Link} from 'react-router-dom'
 
 
 const useStyles = makeStyles(({ 
@@ -86,7 +87,7 @@ export default function Home() {
               </Paper>
               <Grid container justifyContent="center">
                 <Grid item>
-                  <Button className={classes.buttonStyle} variant="contained">Join Today</Button>
+                <Button component={Link} to="/Login" className={classes.buttonStyle} variant="contained">Join Today</Button>
                 </Grid>
               </Grid>
             </Grid>
