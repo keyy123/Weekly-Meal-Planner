@@ -51,7 +51,7 @@ handleVerify()
           <Route path='/Register'>
             <Register handleRegister={handleRegister}/>
           </Route>
-          <Route path="/Home">
+          <Route exact path="/Home">
             <Home />         
           </Route>
           <Route path='/'>

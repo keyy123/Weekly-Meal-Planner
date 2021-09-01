@@ -4,6 +4,7 @@ import './Home.css'
 import Lottie from 'react-lottie'
 import animationData from '../../animations/path.json'
 import animationData2 from '../../animations/fatigue.json'
+import animationData3 from '../../animations/cooking.json'
 import { makeStyles, Grid, Button, Typography, Paper } from '@material-ui/core'
 import theme from '../../Components/ui/Theme.js'
 import {Link} from 'react-router-dom'
@@ -46,6 +47,10 @@ const useStyles = makeStyles(({
   gridContainerStyle2: {
     backgroundColor: theme.palette.primary.light,
     paddingBottom: "70px"
+  },
+  gridContainerStyle3: {
+    backgroundColor: theme.palette.secondary.main,
+    paddingBottom: '70px'
   }
   
 }))
@@ -72,6 +77,14 @@ export default function Home() {
     }
   }
 
+  const defaultOption3 = {
+    loop: true,
+    autoplay: true, 
+    animationData: animationData3,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  }
 
   return (
     <Grid container direction="column" className={classes.mainContainer}>
@@ -114,6 +127,21 @@ export default function Home() {
                   <Button className={classes.buttonStyle} variant="contained">Join Today</Button>
               </Grid>
               </Grid> */}
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item> {/*--Third Section--*/}
+        <Grid container alignItems="center" justifyContent="flex-end" direction="row" className={classes.gridContainerStyle3}>
+          <Grid sm md lg item>
+            <Paper elevation={4}>
+              <Typography variant="h2" color="primary" align="center" >
+                Plus when you have a meal plan in place, <br/>you can focus on
+                picking up your home cooking skills
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid sm md lg item className={classes.animation}>
+            <Lottie options={defaultOption3} height={"100%"} width={"100%"}/>
           </Grid>
         </Grid>
       </Grid>
