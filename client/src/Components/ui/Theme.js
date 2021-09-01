@@ -23,8 +23,14 @@ export default createTheme({
       textTransform: "none",
       fontWeight: 700,
       fontSize: "2em"
+    },
+    h2: {
+      fontFamily: "Heebo, sans-serif",
+      fontWeight: 700,
+      fontSize: "2.5rem",
     }
   },
+
    
 
 

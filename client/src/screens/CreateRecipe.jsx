@@ -24,9 +24,7 @@ export default function CreateRecipe(props) {
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
-      debugger
       handleCreate(id,formData);
-
     }}>
        <label>
         Name:

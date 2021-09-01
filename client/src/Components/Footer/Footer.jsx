@@ -13,6 +13,7 @@ const useStyles = makeStyles({
     height: "fit-content",
     position: "relative",
     zIndex: 1302,
+    marginTop: "40px",
     [theme.breakpoints.down("md")]: {
       height: "20%",
     },
@@ -35,12 +36,12 @@ const useStyles = makeStyles({
   },
   icons: {
     fontSize: "2em",
-    color: "white",
+    color: 'white'
   },
   iconGrid: {
     position: 'relative',
     right: "1.5em"
-  }
+  },
 })
 export default function Footer() {
   const classes = useStyles()  
