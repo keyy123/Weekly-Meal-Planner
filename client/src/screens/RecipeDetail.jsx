@@ -28,7 +28,6 @@ export default function RecipeDetail(props) {
       <p>Protein(g): {recipe?.pro}</p>
       <p>Carbohydrates(g): {recipe?.carbs}</p>
       <p>Fats(g): {recipe?.fat}</p>
-      {/* <Link to={`/menus/${recipe?.menu_id}/recipes/${recipe?.id}/edit`}> */}
         
       <Link to={`/menus/${recipe?.menu?.id}/recipes/${id}/edit`}>
         <button>Edit</button>
