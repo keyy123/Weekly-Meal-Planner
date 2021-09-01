@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { TextField, InputAdornment } from '@material-ui/core';
 
 export default function RecipeEdit(props) {
   const [formData, setFormData] = useState({
@@ -32,58 +33,65 @@ export default function RecipeEdit(props) {
     }))
   }
   return (
-    <form onSubmit={(e) => {
+    <form
+      style={{display:"flex", flexDirection:"column", width: "100%", alignItems:"center"}}
+      onSubmit={(e) => {
       e.preventDefault();
       handleUpdate(id, formData);
     }}
     >
      <h3>Update Recipe</h3>
-        <label>
-        Name:
-        <input 
+        
+           <TextField
+           id="standard-basic"
+           label='Name'
           type='text' 
           name='name' 
           value={formData.name} 
           onChange={handleChange}
         />
-      </label>
+      
       <br />
-      <label>
-        Kcal:
-        <input 
+      
+      <TextField
+          id="standard-basic"
           type='number' 
           name='kcal' 
           value={formData.kcal} 
+          InputProps={{'aria-label':'Calories',endAdornment:<InputAdornment position="end">Kcal</InputAdornment>}}
           onChange={handleChange}
-        />
-      </label>
-      <label>
-        Protein(g):
-        <input 
+  />
+    
+      <TextField
+          id="standard-basic"
+          label="Protein"
           type='number' 
           name='pro' 
-          value={formData.pro} 
+          value={formData.pro}
+          InputProps={{'aria-label':'Protein',endAdornment:<InputAdornment position="end">g</InputAdornment>}}
           onChange={handleChange}
         />
-      </label>
-      <label>
-        Carbohydrates(g):
-        <input 
+      
+      <TextField
+          id="standard-basic"
+          label="Carbohydrates"
           type='number' 
           name='carbs' 
-          value={formData.carbs} 
+          value={formData.carbs}
+          InputProps={{'aria-label':'Carbohydrates',endAdornment:<InputAdornment position="end">g</InputAdornment>}}
           onChange={handleChange}
         />
-      </label>
-      <label>
-        Fats(g):
-        <input 
+      
+      <TextField
+          id="standard-basic"
+          label="Fats"
           type='number' 
           name='fat' 
           value={formData.fat} 
-          onChange={handleChange}
+        onChange={handleChange}
+        InputProps={{'aria-label':'Fats',endAdornment:<InputAdornment position="end">g</InputAdornment>}}
+
         />
-      </label>
       <button>Submit</button>
     </form>
   )}

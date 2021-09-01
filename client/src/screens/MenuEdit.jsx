@@ -32,7 +32,9 @@ const handleChange = (e) => {
   }))
 }
   return (
-    <form style={{display:"flex", flexDirection:"column", width: "100%", alignItems:"center"}} onSubmit={(e) => {
+    <form
+      style={{ display: "flex", flexDirection: "column", width: "100%", alignItems: "center" }}
+      onSubmit={(e) => {
       e.preventDefault();
       handleUpdate(id, formData);
       history.push('/')
