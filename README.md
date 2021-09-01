@@ -197,9 +197,7 @@ src
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
-
-### Thank you w3Schools - you're amazing
+### Cool Code #1
 functionality: _This function works like a history.push to go back 1 specific page
 
   ```
@@ -212,7 +210,15 @@ const goBack = () => {
     <button onClick={() => goBack()}>Back</button>
 ```  
 
+### Cool Code #2
+functionality: _This is actually an eventHandler with multiple functions loaded onto it. It is useful to make multi-state components _
 
+```
+onClick={() => {fxn1; function2}}
+```
+
+### Cool Code #3
+ _@material_ui docs: I highly recommend material ui. It's fun._  
 
 ## Code Issues & Resolutions
 
