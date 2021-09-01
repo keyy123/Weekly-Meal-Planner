@@ -67,9 +67,6 @@ export default function MenuDetail() {
       </Accordion>
      
       
-   
-      <h4>Recipes</h4>
-      
 
    </div>
     
