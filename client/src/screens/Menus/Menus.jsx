@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import { Fab } from '@material-ui/core'
+import { Fab, Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core'
 import AddIcon from '@material-ui/icons/Add'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 export default function Menus(props) {
 const {menus, handleDelete, currentUser} = props
 
@@ -9,17 +10,28 @@ const {menus, handleDelete, currentUser} = props
          <h3>Menus</h3>
       {menus.map((menu) => (
         <div key={menu.id}>
-          <Link to={`/menus/${menu.id}`}>
-            <p>{menu.name}</p>
+         <Accordion>
+        <AccordionSummary
+          style={{wordSpacing:"2px"}}
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+           <Link to={`/menus/${menu.id}`}>
+            <h2>{menu.name}</h2>
           </Link>
-          {currentUser?.id === menu.user_id && (
+        </AccordionSummary>
+        <AccordionDetails style={{display:"flex", flexDirection:"column"}}>
+        {currentUser?.id === menu.user_id && (
             <div>
               <Link to={`/menus/${menu.id}/edit`}>
                 <button>Edit</button>
               </Link>
               <button onClick={() => handleDelete(menu.id)}>Delete</button>
             </div>
-          )}
+              )}
+        </AccordionDetails>  
+      </Accordion>
         </div>
       ))}
       <Link to='/menus/new'>
