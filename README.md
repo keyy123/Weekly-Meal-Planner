@@ -135,13 +135,29 @@ The _**Weekly Meal Planner**  MVP requirements are the following:
 ``` structure
 
 src
+|__ animations/
+      |__ cooking.json
+      |__ fatigue.josn
+      |__ path.json
 |__ assets/
-      |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
+      |__logov3.png
+      |__logo.png
+      |__Logo.gif
+      |__kitty.gif
+      |__FooterImage.png.png
 |__ components/
-      |__ Header.jsx
+      |__ Footer
+          |__Footer.jsx
+       |__ui
+           |__ Theme.js
+       |_containers
+            |__ MainContainer.jsx
+       |__layout
+            |__Layout.css
+            |__Layout.jsx
+        
+  
+      
 |__ services/
 
 ```
@@ -152,9 +168,11 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Add Contact Forms    |    H     |     10+ hrs      |     10+ hrs     |    10+ hrs    |
+| Create CRUD Actions |    H     |     10+ hrs      |     10+ hrs     |     10+hrs     |
+| Screens             |   H     |   10+hrs        | 10+hrs      | 10+hrs |
+| Services            |     H    |    10+hrs      |   10+hrs     |  10+hrs  |
+| TOTAL               |          |      40+hrs      |     40+hrs     |     40+hrs     |
 
 > _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
