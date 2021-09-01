@@ -187,13 +187,12 @@ src
 ***
 
 ## Post-MVP
-
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
 - Voice Enabled Input
 - Grocery List (API from local grocers)
 - Google Maps integration
 - Calorie Tracking and handling on menu
 - Chart.js library for macros as well 
+- Add a feedback section to get feedback from beta-testers
 ***
 
 ## Code Showcase
