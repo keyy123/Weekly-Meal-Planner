@@ -16,7 +16,8 @@ const useStyles = makeStyles(({
     marginLeft: "10%"
   },
   gridContainerStyle: {
-    backgroundColor:"lightBlue"
+    backgroundColor: "lightBlue",
+    paddingBottom: "140px"
   },
   buttonStyle: {
     borderRadius: "50px",
@@ -41,7 +42,10 @@ const useStyles = makeStyles(({
       marginLeft: "1em"
     }
   },
-  
+  gridContainerStyle2: {
+    backgroundColor: theme.palette.primary.light,
+    paddingBottom: "70px"
+  }
   
 }))
 
@@ -92,23 +96,23 @@ export default function Home() {
         </Grid>
       </Grid>
       <Grid item> {/*--Second Section-- */}
-        <Grid container alignItems="center" justifyContent="flex-start" direction="row">
-        <Grid sm md lg item>
-            <Lottie options={defaultOption2} height={"71.38%"} width={"100%"}/>
+        <Grid container alignItems="center" justifyContent="flex-start" direction="row" className={classes.gridContainerStyle2}>
+        <Grid sm md lg item className={classes.animation}>
+            <Lottie options={defaultOption2} height={"60.38%"} width={"100%"}/>
           </Grid>
           <Grid sm md lg item>
           <Paper elevation={4}>
           <Typography variant="h2" color="primary" align="center">
-              Fed Up With Food
+              Studies from pubmed suggests that high diet quality in addition to 
               <br />
-              Not Anymore!
+              high quality and quantity of sleep and isocaloric diet!
               </Typography>
               </Paper>
-              <Grid container justifyContent="center">
+              {/* <Grid container justifyContent="center">
                 <Grid item>
                   <Button className={classes.buttonStyle} variant="contained">Join Today</Button>
               </Grid>
-              </Grid>
+              </Grid> */}
           </Grid>
         </Grid>
       </Grid>

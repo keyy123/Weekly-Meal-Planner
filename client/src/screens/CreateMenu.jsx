@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { TextField, InputAdornment } from '@material-ui/core';
 
 export default function CreateMenu(props) {
   const [formData, setFormData] = useState({
@@ -20,39 +21,44 @@ export default function CreateMenu(props) {
 
   
   return (
-    <form onSubmit={(e) => {
+    <form
+      style={{display:"flex", flexDirection:"column", width:"100%", alignItems:"center"}}
+      onSubmit={(e) => {
       e.preventDefault();
       handleCreate(formData);
     }}>
        <h3>Create a new Menu</h3>
-        <label>
-        Name:
-        <input 
+        
+           <TextField
+           id="standard-basic"
+           label="Name"
           type='text' 
           name='name' 
-          value={name} 
+        value={name}
           onChange={handleChange}
         />
-      </label>
-      <br />
-      <label>
-        Kcal:
-        <input 
+      
+      <TextField
+          id="standard-basic"
+          label="Kcal"
           type='number' 
           name='kcal' 
-          value={kcal} 
+          value={kcal}
+          InputProps={{'aria-label':'Calories',endAdornment:<InputAdornment position="end">Kcal</InputAdornment>}}
+
           onChange={handleChange}
         />
-      </label>
       <label>
         Start Date:
-        <input 
-          type='datetime-local' 
-          name='start_date' 
-          value={start_date} 
-          onChange={handleChange}
+        <TextField
+        id="standard-basic"
+        type='datetime-local'
+        name='start_date'
+        value={start_date}
+        onChange={handleChange}
         />
-      </label>
+    </label>
+
       <label>
         End Date:
         <input 

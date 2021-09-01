@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import {useParams} from 'react-router-dom';
 import { useHistory } from 'react-router';
+import { TextField, InputAdornment } from '@material-ui/core';
 export default function MenuEdit(props) {
   const [formData, setFormData] = useState({
     name: '',
@@ -31,35 +32,36 @@ const handleChange = (e) => {
   }))
 }
   return (
-    <form onSubmit={(e) => {
+    <form style={{display:"flex", flexDirection:"column", width: "100%", alignItems:"center"}} onSubmit={(e) => {
       e.preventDefault();
       handleUpdate(id, formData);
       history.push('/')
     }}
     >
       <h3>Update Menu</h3>
-        <label>
-        Name:
-        <input 
+          <TextField
+          id="standard-basic"
+          label='Name'
           type='text' 
           name='name' 
           value={formData.name} 
           onChange={handleChange}
         />
-      </label>
       <br />
-      <label>
-        Kcal:
-        <input 
+      
+          <TextField
+          id="standard-basic"
           type='number' 
           name='kcal' 
-          value={formData.kcal} 
+        value={formData.kcal}
+        InputProps={{'aria-label':'Calories',endAdornment:<InputAdornment position="end">Kcal</InputAdornment>}}
           onChange={handleChange}
         />
-      </label>
+      
       <label>
         Start Date:
-        <input 
+        <TextField
+          id="standard-basic"
           type='datetime-local' 
           name='start_date' 
           value={formData.start_date} 
@@ -68,7 +70,8 @@ const handleChange = (e) => {
       </label>
       <label>
         End Date:
-        <input 
+        <TextField
+          id="standard-basic"
           type='datetime-local'
           name='end_date' 
           value={formData.end_date} 

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link,useParams } from 'react-router-dom';
 import { readOneMenu } from '../services/menus';
+import { Accordion, AccordionSummary, AccordionDetails, Button } from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 //import { readRecipes, createRecipe, updateRecipe, deleteRecipe } from '../services/recipes';
 // import Recipes from '../screens/Recipes'
 // import RecipeDetail from '../screens/RecipeDetail'
@@ -42,17 +44,33 @@ export default function MenuDetail() {
 
   return (
     <div>
-      <h3>{menuItem?.name}</h3>
-      <p>Kcal/d: {menuItem?.kcal}</p>
-      <p>Duration: {menuItem?.start_date} to {menuItem?.end_date}</p>
+      <Accordion>
+        <AccordionSummary
+          style={{wordSpacing:"2px"}}
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <h3>{menuItem?.name}</h3> <p/> <p>Kcal/d: {menuItem?.kcal}</p> <p>Duration: {menuItem?.start_date} to {menuItem?.end_date}</p>
+
+        </AccordionSummary>
+        <AccordionDetails style={{display:"flex", flexDirection:"column"}}>
+          
+        <Link style={{ textDecoration:"none"}} to={`/menus/${menuItem?.id}/recipes/`}>
+        <Button>All Recipes In {menuItem?.name}</Button>
+          </Link>
+          <Link style={{textDecoration:"none"}} to={`/menus/${menuItem?.id}/recipes/new`}>
+        <Button color="primary">Create A New Recipe For {menuItem?.name}</Button>
+      </Link>
+        
+        </AccordionDetails>
+      </Accordion>
+     
+      
    
       <h4>Recipes</h4>
-      <Link to={`/menus/${menuItem?.id}/recipes/`}>
-        <p>All Recipes In {menuItem?.name}</p>
-      </Link>
-      <Link to={`/menus/${menuItem?.id}/recipes/new`}>
-        <button>Create</button>
-      </Link>
+      
+
    </div>
     
     

@@ -57,7 +57,7 @@ const handleDelete = async (id) => {
 
 const handleRecipeCreate = async (id, formData) => {
   await createRecipe(id, formData);
-  history.push(`/menus/${id}`);
+  history.push(`/menus/${id}/recipes`);
 };
 
 
