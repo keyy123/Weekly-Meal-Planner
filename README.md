@@ -87,7 +87,7 @@ The _**Weekly Meal Planner**  MVP requirements are the following:
 |      React       | _The only way to react is react_ |
 |   React Router   | _Client-side routing_ |
 |    Material-UI   |_Library of re-usable and customizable components_ |
-
+|    React-Lotte   | _Animation Library from AirBnB ported for react_
 <br>
 
 ### Client (Front End)
@@ -135,13 +135,29 @@ The _**Weekly Meal Planner**  MVP requirements are the following:
 ``` structure
 
 src
+|__ animations/
+      |__ cooking.json
+      |__ fatigue.josn
+      |__ path.json
 |__ assets/
-      |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
+      |__logov3.png
+      |__logo.png
+      |__Logo.gif
+      |__kitty.gif
+      |__FooterImage.png.png
 |__ components/
-      |__ Header.jsx
+      |__ Footer
+          |__Footer.jsx
+       |__ui
+           |__ Theme.js
+       |_containers
+            |__ MainContainer.jsx
+       |__layout
+            |__Layout.css
+            |__Layout.jsx
+        
+  
+      
 |__ services/
 
 ```
@@ -152,11 +168,13 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Add Contact Forms    |    H     |     10+ hrs      |     10+ hrs     |    10+ hrs    |
+| Create CRUD Actions x 2 |    H     |     20+ hrs      |     20+ hrs     |     20+hrs     |
+| Screens             |   H     |   10+hrs        | 10+hrs      | 10+hrs |
+| Services            |     H    |    10+hrs      |   10+hrs     |  10+hrs  |
+| TOTAL               |          |      50+hrs      |     50+hrs     |     50+hrs     |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
+
 
 <br>
 
@@ -169,15 +187,47 @@ src
 ***
 
 ## Post-MVP
-
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
-
+- Voice Enabled Input
+- Grocery List (API from local grocers)
+- Google Maps integration
+- Calorie Tracking and handling on menu
+- Chart.js library for macros as well 
+- Add a feedback section to get feedback from beta-testers
 ***
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+### Cool Code #1
+functionality: _This function works like a history.push to go back 1 specific page
+
+  ```
+const goBack = () => {
+    window.history.back();
+  }
+  
+  ...
+
+    <button onClick={() => goBack()}>Back</button>
+```  
+
+### Cool Code #2
+functionality: _This is actually an eventHandler with multiple functions loaded onto it. It is useful to make multi-state components _
+
+```
+onClick={() => {fxn1; function2}}
+```
+
+### Cool Code #3
+ _@material_ui docs: I highly recommend material ui. It's fun._  
 
 ## Code Issues & Resolutions
 
 > Use this section to list of all major issues encountered and their resolution.
+
+React Lottie - read lottie animation and google
+
+Hero Page - udemy
+
+@material-ui - YT,udemy, google, @material-ui
+
+deployment - google, heroku, and feedback 
