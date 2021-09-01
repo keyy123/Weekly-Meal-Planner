@@ -4,7 +4,6 @@ import { makeStyles, ThemeProvider } from '@material-ui/styles'
 import theme from '../Components/ui/Theme.js'
 import "./Layout.css" 
 import logov3 from "../Assets/logov3.png"
-//import {  Drawer } from '@material-ui/core'
 import { useState, useEffect } from 'react'
 import MenuIcon from "@material-ui/icons/Menu"
 import RestaurantMenuRoundedIcon from '@material-ui/icons/RestaurantMenuRounded';
@@ -148,11 +147,6 @@ export default function Layout(props) {
                       
                       
                   )}
-          {/* {currentUser && (
-            <div>
-               
-                  </div>
-                )} */}
       </>
   )
   
@@ -182,7 +176,6 @@ export default function Layout(props) {
             selected={value === 2}
             component={Link} to="/Home"
             button
-            // onClick={(e)=>handleListItemOnClick(e,0)}
             onClick={() => {setOpenDrawer(false); setValue(2)}} 
           >
             <ListItemIcon>
@@ -196,8 +189,6 @@ export default function Layout(props) {
           <ListItem
            selected={value===1}
             component={Link} to="/menus"
-            // onClick={(e)=>handleListItemOnClick(e,1)}
-            //onClick={() => setOpenDrawer(false)}
             button onClick={() => {setOpenDrawer(false); setValue(1)}}
             
           >
@@ -215,7 +206,6 @@ export default function Layout(props) {
             button onClick={() => { currentUser ? (handleLogout()) : (history.push('/Login')); setValue(0) }}
             className={classes.drawerStyle2}
             
-            // onClick={(e)=>handleListItemOnClick(e,2)}
           >
             <ListItemIcon>
               <ExitToAppRoundedIcon/>
@@ -236,14 +226,10 @@ export default function Layout(props) {
       <AppBar position="fixed" className={classes.appbar} color="primary">
           <Toolbar disableGutters>
             <img className={classes.logo}src={logov3} alt="company logo"/>
-    {/* <h1 className="Title">Meal Prepper</h1> */}
     {matches ? drawer : tabs }
           </Toolbar>
       </AppBar>
       </ThemeProvider>
-      {/* <div className={classes.toolbarMargin} /> */}
-      {/* <div className={classes.toolbarMargin} /> */}
-      {/* <div className={classes.toolbarMargin} /> */}
       
       {props.children}
       <Footer/>

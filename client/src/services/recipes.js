@@ -10,7 +10,6 @@ export const readRecipe = async (id) => {
   return res.data
 }
 
-//This may need to be adjusted
 export const createRecipe = async (id, data) => {
   const res = await api.post(`/menus/${id}/recipes`, { recipe: data })
   return res.data

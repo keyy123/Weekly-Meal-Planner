@@ -1,5 +1,4 @@
 
-// import Logo from '../../Assets/Logo.gif'
 import './Home.css'
 import Lottie from 'react-lottie'
 import animationData from '../../animations/path.json'
@@ -122,11 +121,6 @@ export default function Home() {
               high quality and quantity of sleep and isocaloric diet!
               </Typography>
               </Paper>
-              {/* <Grid container justifyContent="center">
-                <Grid item>
-                  <Button className={classes.buttonStyle} variant="contained">Join Today</Button>
-              </Grid>
-              </Grid> */}
           </Grid>
         </Grid>
       </Grid>
