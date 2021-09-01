@@ -87,7 +87,7 @@ The _**Weekly Meal Planner**  MVP requirements are the following:
 |      React       | _The only way to react is react_ |
 |   React Router   | _Client-side routing_ |
 |    Material-UI   |_Library of re-usable and customizable components_ |
-
+|    React-Lotte   | _Animation Library from AirBnB ported for react_
 <br>
 
 ### Client (Front End)
@@ -169,12 +169,12 @@ src
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
 | Add Contact Forms    |    H     |     10+ hrs      |     10+ hrs     |    10+ hrs    |
-| Create CRUD Actions |    H     |     10+ hrs      |     10+ hrs     |     10+hrs     |
+| Create CRUD Actions x 2 |    H     |     20+ hrs      |     20+ hrs     |     20+hrs     |
 | Screens             |   H     |   10+hrs        | 10+hrs      | 10+hrs |
 | Services            |     H    |    10+hrs      |   10+hrs     |  10+hrs  |
-| TOTAL               |          |      40+hrs      |     40+hrs     |     40+hrs     |
+| TOTAL               |          |      50+hrs      |     50+hrs     |     50+hrs     |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
+
 
 <br>
 
@@ -189,13 +189,40 @@ src
 ## Post-MVP
 
 > Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
-
+- Voice Enabled Input
+- Grocery List (API from local grocers)
+- Google Maps integration
+- Calorie Tracking and handling on menu
+- Chart.js library for macros as well 
 ***
 
 ## Code Showcase
 
 > Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
 
+### Thank you w3Schools - you're amazing
+functionality: _This function works like a history.push to go back 1 specific page
+
+  ```
+const goBack = () => {
+    window.history.back();
+  }
+  
+  ...
+
+    <button onClick={() => goBack()}>Back</button>
+```  
+
+
+
 ## Code Issues & Resolutions
 
 > Use this section to list of all major issues encountered and their resolution.
+
+React Lottie - read lottie animation and google
+
+Hero Page - udemy
+
+@material-ui - YT,udemy, google, @material-ui
+
+deployment - google, heroku, and feedback 
